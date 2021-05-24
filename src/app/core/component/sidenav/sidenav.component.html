@@ -1,0 +1,6 @@
+<div class="container">
+  <channel-box></channel-box> <!-- Home Button -->
+  <div class="divider"></div>
+  <channel-box *ngFor="let channel of channels" [channelImageUrl]="channel.imageUrl" [channelName]="channel.name">
+  </channel-box>
+</div>
