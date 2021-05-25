@@ -1,17 +1,17 @@
 import { Component, Input, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'channel-box',
+  selector: 'server-box',
   templateUrl: './box.component.html',
   styleUrls: ['./box.component.css']
 })
 export class BoxComponent implements OnInit {
 
   @Input()
-  channelImageUrl: string = "https://i.pinimg.com/736x/34/91/f3/3491f3e50ab6a4d51a348f9cc2419842.jpg";
+  serverImageUrl: string = "";
 
   @Input()
-  channelName: string = "Início";
+  serverName: string = "";
 
   ngOnInit(): void {
     this.focusEffect();

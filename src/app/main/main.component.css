@@ -1,10 +1,8 @@
 .sidenav {
-  background-color: red;
   grid-area: sn;
 }
 
 .channels {
-  background-color: green;
   grid-area: cn;
 }
 

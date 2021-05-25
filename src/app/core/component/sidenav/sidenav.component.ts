@@ -1,5 +1,5 @@
-import { Component, OnInit } from "@angular/core";
-import { Channel } from "./channel";
+import { Component } from "@angular/core";
+import { ServerModel } from "./server";
 
 @Component({
   selector: 'sidenav',
@@ -8,15 +8,15 @@ import { Channel } from "./channel";
 })
 export class SidenavComponent {
 
-  channels: Channel[];
+  servers: ServerModel[];
 
   constructor() {
-    this.channels = CHANNELS;
+    this.servers = SERVERS;
   }
 
 }
 
-const CHANNELS : Channel[] = [
+const SERVERS : ServerModel[] = [
   {
     name: 'Efex',
     imageUrl: 'https://cdn.discordapp.com/icons/559375487433048075/b8aeb13a8d40f573e5f2dfe1d62ddd23.png?size=128'

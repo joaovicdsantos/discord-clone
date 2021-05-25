@@ -67,8 +67,8 @@
 .container .tooltip::before {
   content: "";
   position: absolute;
-  top: 13px;
-  left: -4px;
+  top: 11px;
+  left: -3px;
   border-radius: 2px;
   transform: rotate(45deg);
   width: 8px;
