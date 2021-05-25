@@ -6,5 +6,4 @@ export class Channel {
     this.type = type;
     this.name = name;
   }
-
 }

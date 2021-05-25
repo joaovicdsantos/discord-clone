@@ -1,17 +1,16 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'server-box',
   templateUrl: './box.component.html',
-  styleUrls: ['./box.component.css']
+  styleUrls: ['./box.component.css'],
 })
 export class BoxComponent implements OnInit {
+  @Input()
+  serverImageUrl: string = '';
 
   @Input()
-  serverImageUrl: string = "";
-
-  @Input()
-  serverName: string = "";
+  serverName: string = '';
 
   ngOnInit(): void {
     this.focusEffect();
@@ -21,25 +20,27 @@ export class BoxComponent implements OnInit {
 
   tooltips(): void {
     const tooltips = document.querySelectorAll<HTMLElement>('.tooltip');
-    tooltips.forEach(tooltip => {
-      tooltip.style.right = `${-(tooltip.offsetWidth+6)}px`;
-    })
+    tooltips.forEach((tooltip) => {
+      tooltip.style.right = `${-(tooltip.offsetWidth + 6)}px`;
+    });
   }
 
   focusEffect(): void {
     const links = document.querySelectorAll<HTMLElement>('.container .link');
-    links.forEach(link => {
+    links.forEach((link) => {
       link.addEventListener('focus', (e) => {
         this.clearFocusEffect();
         link.classList.add('link-active');
-        link.parentNode!.querySelector<HTMLElement>('.indicator')!.classList.add('active');
+        link
+          .parentNode!.querySelector<HTMLElement>('.indicator')!
+          .classList.add('active');
       });
     });
   }
 
   clearFocusEffect(): void {
     const links = document.querySelectorAll('.container .link');
-    links.forEach(link => {
+    links.forEach((link) => {
       link.classList.remove('link-active');
       link.parentNode!.querySelector('.indicator')!.classList.remove('active');
     });
@@ -47,14 +48,15 @@ export class BoxComponent implements OnInit {
 
   tooltip(): void {
     const links = document.querySelectorAll<HTMLElement>('.container .link');
-    links.forEach(link => {
+    links.forEach((link) => {
       link.addEventListener('mouseover', (e) => {
-        link.parentNode!.querySelector<HTMLElement>('.tooltip')!.style.opacity = "1";
+        link.parentNode!.querySelector<HTMLElement>('.tooltip')!.style.opacity =
+          '1';
       });
       link.addEventListener('mouseout', (e) => {
-        link.parentNode!.querySelector<HTMLElement>('.tooltip')!.style.opacity = "0";
+        link.parentNode!.querySelector<HTMLElement>('.tooltip')!.style.opacity =
+          '0';
       });
     });
   }
-
 }
