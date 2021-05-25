@@ -1,19 +1,80 @@
 .container {
-  box-sizing: border-box;
-  padding: 5px 10px;
+  height: auto;
   width: 100%;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  position: relative;
 }
 
-.container a img {
+.container .indicator {
+  border-right: 4px solid #fff;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  transition: all 200ms;
+  height: 0;
+  opacity: 1;
+}
+
+.active {
+  height: 40px !important;
+}
+
+.container .link {
   width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex: 2;
+}
+
+.container .link-active img {
+  border-radius: 30% !important;
+}
+
+.container .link img {
+  height: 48px;
   border-radius: 50%;
   transition: border-radius 200ms;
+  background-color: #36393f;
 }
 
-.container a:hover img {
+.container .link:hover img {
   border-radius: 30%;
+  background-color: #7289da;
 }
 
+.container .link:hover + * {
+  opacity: 1;
+  height: 30%;
+}
+
+.container .tooltip {
+  position: absolute;
+  background-color: #18191c;
+  border-radius: 5px;
+  font-weight: bold;
+  color: #dddddd;
+  box-shadow: 4px 4px 7px rgba(0, 0, 0, .5);
+  padding: 5px 12px;
+  opacity: 0;
+  transition: all 300ms;
+}
+
+.container .tooltip::before {
+  content: "";
+  position: absolute;
+  top: 13px;
+  left: -4px;
+  border-radius: 2px;
+  transform: rotate(45deg);
+  width: 8px;
+  height: 8px;
+  background-color: #18191c;
+}
 
 * {
   user-select: none;

@@ -1,0 +1,16 @@
+@font-face {
+  font-family: 'Curwen-Sans';
+  src:  url('assets/fonts/Curwen-Sans.ttf.woff') format('woff'),
+    url('assets/fonts/Curwen-Sans.ttf.svg') format('svg'),
+    url('assets/fonts/Curwen-Sans.ttf.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: 'Curwen-Sans', sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+}

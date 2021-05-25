@@ -24,5 +24,13 @@ const CHANNELS : Channel[] = [
   {
     name: 'BitCode',
     imageUrl: 'https://cdn.discordapp.com/icons/762608638912364544/ce77c53576128878cd0d6d84bda971bd.png?size=128'
+  },
+  {
+    name: 'BurnOut Brasil',
+    imageUrl: 'https://cdn.discordapp.com/icons/537765244702031913/e095942640c7c1c64ff8c9350a2bff94.png?size=128'
+  },
+  {
+    name: 'FatalErrors',
+    imageUrl: 'https://cdn.discordapp.com/icons/810989329446207588/c05e0c20d5ea2feefbc80abf316da54d.png?size=128'
   }
 ]
