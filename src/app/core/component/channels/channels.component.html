@@ -3,7 +3,8 @@
     <h1 class="title">Channel Name</h1>
     <i class="fas fa-chevron-down icon"></i>
   </div>
-  <div>
-    <channel></channel>
+  <div class="channels-container">
+    <channel *ngFor="let channel of channels" [channel]="channel"></channel>
+    <group-channel *ngFor="let group of groups" [group]="group"></group-channel>
   </div>
 </div>

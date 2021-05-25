@@ -1,3 +1,8 @@
-<h1>
-
-</h1>
+<div class="channel" (click)="changeChannel($event, channel)">
+  <div class="name-container">
+    <i *ngIf="channel.type === 'text'" class="fas fa-hashtag logo"></i>
+    <i *ngIf="channel.type === 'voice'" class="fas fa-volume-up logo"></i>
+    <span class="name">{{ channel.name }}</span>
+  </div>
+  <i class="fas fa-user-plus add-icon"></i>
+</div>

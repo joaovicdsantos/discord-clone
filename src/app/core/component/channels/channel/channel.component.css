@@ -1,0 +1,61 @@
+.channel {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 5px;
+  margin: 2px 0;
+  color: #72767d;
+  transition: all 200ms;
+}
+
+.channel:hover {
+  background-color: #34373c;
+}
+
+.channel:hover .name {
+  color: #ccc;
+}
+
+.active {
+  background-color: #393c43 !important;
+}
+
+.active .name {
+  color: #ddd !important;
+}
+
+.channel .name-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.channel .name-container .logo {
+  width: 15px;
+  display: block;
+  margin: 0 auto;
+  margin-right: 10px;
+}
+
+.add-icon {
+  font-size: 9pt;
+  color: #aaa;
+  opacity: 0;
+  transition: all 300ms;
+}
+
+.active .add-icon {
+  opacity: 1;
+}
+
+* {
+  user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}

@@ -1,0 +1,40 @@
+.container {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.title {
+  color: #72767d;
+  font-weight: bold;
+  font-size: 11pt;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.title:hover {
+  color: #ccc;
+}
+
+.title span {
+  display: block;
+}
+
+.title .chevron {
+  display: block;
+  font-size: 6pt;
+  margin-right: 10px;
+  transition: transform 300ms;
+}
+
+.channels-container {
+  display: block;
+}
+
+* {
+  user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}

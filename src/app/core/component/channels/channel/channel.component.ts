@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Channel } from './channel';
 
 @Component({
@@ -6,11 +6,19 @@ import { Channel } from './channel';
   templateUrl: 'channel.component.html',
   styleUrls: ['channel.component.css'],
 })
-export class ChannelComponent {}
+export class ChannelComponent {
+  @Input()
+  channel: Channel = new Channel('', '');
 
-const CHANNELS: Channel[] = [
-  {
-    type: 'text',
-    name: 'Geral',
-  },
-];
+  changeChannel(e: any, channel: Channel): void {
+    this.clearSelection();
+    e.currentTarget.classList.add('active');
+  }
+
+  clearSelection() {
+    const channels = document.querySelectorAll('.channel');
+    channels.forEach((channel) => {
+      channel.classList.remove('active');
+    });
+  }
+}

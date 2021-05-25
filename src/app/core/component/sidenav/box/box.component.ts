@@ -13,9 +13,15 @@ export class BoxComponent implements OnInit {
   serverName: string = '';
 
   ngOnInit(): void {
-    this.focusEffect();
     this.tooltip();
     setTimeout(this.tooltips, 500); // Time to load
+  }
+
+  clickEffect(e: any): void {
+    this.clearClickEffect(); // Clear other effects
+    const link = e.currentTarget;
+    link.classList.add('link-active');
+    link.parentNode.querySelector('.indicator').classList.add('active');
   }
 
   tooltips(): void {
@@ -25,20 +31,7 @@ export class BoxComponent implements OnInit {
     });
   }
 
-  focusEffect(): void {
-    const links = document.querySelectorAll<HTMLElement>('.container .link');
-    links.forEach((link) => {
-      link.addEventListener('focus', (e) => {
-        this.clearFocusEffect();
-        link.classList.add('link-active');
-        link
-          .parentNode!.querySelector<HTMLElement>('.indicator')!
-          .classList.add('active');
-      });
-    });
-  }
-
-  clearFocusEffect(): void {
+  clearClickEffect(): void {
     const links = document.querySelectorAll('.container .link');
     links.forEach((link) => {
       link.classList.remove('link-active');
@@ -50,12 +43,16 @@ export class BoxComponent implements OnInit {
     const links = document.querySelectorAll<HTMLElement>('.container .link');
     links.forEach((link) => {
       link.addEventListener('mouseover', (e) => {
-        link.parentNode!.querySelector<HTMLElement>('.tooltip')!.style.opacity =
-          '1';
+        const tooltip =
+          link.parentElement!.querySelector<HTMLElement>('.tooltip')!;
+        tooltip.style.zIndex = '1';
+        tooltip.style.opacity = '1';
       });
       link.addEventListener('mouseout', (e) => {
-        link.parentNode!.querySelector<HTMLElement>('.tooltip')!.style.opacity =
-          '0';
+        const tooltip =
+          link.parentElement!.querySelector<HTMLElement>('.tooltip')!;
+        tooltip.style.zIndex = '-1';
+        tooltip.style.opacity = '0';
       });
     });
   }
