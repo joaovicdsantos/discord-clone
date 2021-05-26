@@ -2,10 +2,10 @@ import { Component, ContentChildren, Input } from '@angular/core';
 
 @Component({
   selector: 'group-channel',
-  templateUrl: 'group-channel.component.html',
-  styleUrls: ['group-channel.component.css'],
+  templateUrl: 'channel-group.component.html',
+  styleUrls: ['channel-group.component.css'],
 })
-export class GroupChannelComponent {
+export class ChannelGroupComponent {
   @Input()
   group: any = {};
 

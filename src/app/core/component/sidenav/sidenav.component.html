@@ -1,6 +1,13 @@
 <div class="container">
-  <server-box serverImageUrl="https://i.pinimg.com/736x/34/91/f3/3491f3e50ab6a4d51a348f9cc2419842.jpg" serverName="Home"></server-box>
+  <server-box
+    serverImageUrl="assets/img/logo.png"
+    serverName="Home"
+  ></server-box>
   <div class="divider"></div>
-  <server-box *ngFor="let server of servers" [serverImageUrl]="server.imageUrl" [serverName]="server.name">
+  <server-box
+    *ngFor="let server of servers"
+    [serverImageUrl]="server.imageUrl"
+    [serverName]="server.name"
+  >
   </server-box>
 </div>

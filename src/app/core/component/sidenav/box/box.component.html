@@ -1,6 +1,6 @@
 <div class="container">
   <a href="#" class="link" (click)="clickEffect($event)">
-    <img [src]="serverImageUrl" [alt]="serverName">
+    <img [src]="serverImageUrl" [alt]="serverName" [srcset]="serverImageUrl" />
   </a>
   <div class="indicator"></div>
   <div class="tooltip">{{ serverName }}</div>

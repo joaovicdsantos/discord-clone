@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { Channel } from './channel/channel';
+import { GroupChannel } from './group-channel/channel-group';
 
 @Component({
   selector: 'channels',
-  templateUrl: 'channels.component.html',
-  styleUrls: ['channels.component.css'],
+  templateUrl: './channels.component.html',
+  styleUrls: ['./channels.component.css'],
 })
 export class ChannelsComponent {
   channels: Channel[];
@@ -19,17 +20,21 @@ export class ChannelsComponent {
 const CHANNELS: Channel[] = [
   {
     type: 'text',
-    name: 'geral',
+    name: 'rules',
+  },
+  {
+    type: 'text',
+    name: 'commands',
   },
   {
     type: 'voice',
-    name: 'bate-papo',
+    name: '• away',
   },
 ];
 
-const GRUOPS = [
+const GRUOPS: GroupChannel[] = [
   {
-    name: 'Work/Study',
+    name: '🎫 | Work/Study',
     channels: [
       {
         type: 'text',
@@ -45,11 +50,32 @@ const GRUOPS = [
       },
       {
         type: 'voice',
-        name: 'Work / Study¹',
+        name: '• Work / Study ¹',
       },
       {
         type: 'voice',
-        name: 'Work / Study²',
+        name: '• Work / Study ²',
+      },
+    ],
+  },
+  {
+    name: '🎮 | Games',
+    channels: [
+      {
+        type: 'text',
+        name: 'games',
+      },
+      {
+        type: 'text',
+        name: 'new-videos-havook',
+      },
+      {
+        type: 'voice',
+        name: '• chat ¹',
+      },
+      {
+        type: 'voice',
+        name: '• chat ²',
       },
     ],
   },
