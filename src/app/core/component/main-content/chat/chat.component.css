@@ -1,0 +1,61 @@
+.container {
+  display: grid;
+  grid-template-areas: 'ms' 'sd';
+  grid-template-rows: 1fr auto;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  background-color: #36393f;
+  padding: 15px;
+}
+
+.messages {
+  grid-area: ms;
+  overflow: auto;
+  height: 100%;
+}
+
+.send {
+  grid-area: sd;
+  width: 100%;
+  padding: 10.5px 0 10.5px 15px;
+  margin: 0 1px;
+  display: flex;
+  background-color: #40444b;
+  border-radius: 9px;
+  margin-bottom: 10px;
+}
+
+.send i {
+  font-size: 16pt;
+}
+
+.send .add-file {
+  color: #b9bbbe;
+}
+
+.send form {
+  flex: 1;
+}
+
+.send form input {
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding-left: 12px;
+  color: #b9bbbe;
+}
+
+.icons-group {
+  color: #b9bbbe;
+}
+
+.icons-group i {
+  margin-right: 18px;
+}
+
+.icons-group .button-modal.active {
+  color: #fff;
+}

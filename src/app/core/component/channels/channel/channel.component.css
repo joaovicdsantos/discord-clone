@@ -4,7 +4,7 @@
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
-  padding: 6px 8px;
+  padding: 6px 9px;
   border-radius: 5px;
   margin: 2px 0;
   color: #72767d;
@@ -17,6 +17,10 @@
 
 .channel:hover .name {
   color: #ccc;
+}
+
+.channel:hover .add-icon {
+  opacity: 1;
 }
 
 .active {
@@ -32,12 +36,14 @@
   justify-content: center;
   align-items: center;
   font-weight: 400;
+  line-height: 120%;
 }
 
 .channel .name-container .logo {
   width: 15px;
   display: block;
   margin: 0 auto;
+  font-size: 13.5pt;
   margin-right: 10px;
 }
 

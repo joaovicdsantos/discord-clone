@@ -1,0 +1,22 @@
+.container {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    'nv nv'
+    'ch pe';
+}
+
+.navbar {
+  grid-area: nv;
+  height: 49px;
+}
+
+.chat {
+  grid-area: ch;
+}
+
+.people {
+  grid-area: pe;
+}

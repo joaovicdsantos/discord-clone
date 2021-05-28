@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="messages">
+    <message *ngFor="let message of messages" [message]="message"></message>
+  </div>
+  <div class="send">
+    <i class="fas fa-plus-circle add-file"></i>
+    <form action="">
+      <input type="text" name="" id="" />
+    </form>
+    <div class="icons-group">
+      <i (click)="active($event)" class="fas fa-gift button-modal"></i>
+      <i (click)="active($event)" class="fas fa-map-pin button-modal"></i>
+      <i (click)="active($event)" class="fas fa-file button-modal"></i>
+      <i (click)="active($event)" class="fas fa-smile-beam button-modal"></i>
+    </div>
+  </div>
+</div>

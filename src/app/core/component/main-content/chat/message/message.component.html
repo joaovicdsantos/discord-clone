@@ -1,0 +1,10 @@
+<div class="container">
+  <img [src]="message.userUrlImg" [alt]="message.username" class="user-image" />
+  <div class="message">
+    <div class="message-header">
+      <span class="name">{{ message.username }}</span>
+      <span class="date">{{ message.date }}</span>
+    </div>
+    <div class="message-content" [innerHTML]="message.message | marked"></div>
+  </div>
+</div>

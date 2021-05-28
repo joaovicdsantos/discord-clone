@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="title-container">
+    <h1 class="title">
+      <i class="fas fa-hashtag logo"></i>
+      <span>rules</span>
+    </h1>
+  </div>
+  <nav>
+    <div class="icons-group">
+      <i (click)="active($event)" class="fas fa-bell button-modal"></i>
+      <i (click)="active($event)" class="fas fa-map-pin button-modal"></i>
+      <i (click)="active($event)" class="fas fa-user-friends button-modal"></i>
+    </div>
+    <form action="">
+      <input type="text" placeholder="Search" />
+      <i class="fas fa-search"></i>
+    </form>
+    <div class="icons-group">
+      <i (click)="active($event)" class="fas fa-inbox button-modal"></i>
+      <i
+        (click)="active($event)"
+        class="fas fa-question-circle button-modal"
+      ></i>
+    </div>
+  </nav>
+</div>
