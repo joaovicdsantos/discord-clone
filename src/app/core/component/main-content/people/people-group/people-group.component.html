@@ -1,0 +1,4 @@
+<div class="container">
+  <span class="people-title">{{ title }} — {{ users.length }}</span>
+  <person *ngFor="let user of users" [user]="user"></person>
+</div>
