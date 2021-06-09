@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --proxy-config proxy.conf.json --base-href /",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
@@ -21,6 +21,7 @@
     "@angular/router": "~12.0.1",
     "markdown-it": "^12.0.6",
     "marked": "^2.0.5",
+    "ngx-cookie-service": "^12.0.0",
     "purecss": "^2.0.6",
     "rxjs": "~6.6.0",
     "tslib": "^2.1.0",

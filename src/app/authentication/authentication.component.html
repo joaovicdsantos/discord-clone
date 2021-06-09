@@ -1,0 +1,62 @@
+<div class="container">
+  <div class="auth-container">
+    <div class="form-container">
+      <div class="form-title-container">
+        <h1>Welcome back!</h1>
+        <h2>We're so excited to see you again!</h2>
+      </div>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div>
+          <div class="form-group" id="form-email">
+            <label for="email"
+              >Email<span id="form-email-error" class="hide"></span>
+            </label>
+            <input
+              type="email"
+              id="email"
+              formControlName="email"
+              autocomplete="off"
+              required
+            />
+          </div>
+          <div class="form-group" id="form-password">
+            <label for="password"
+              >Password <span id="form-password-error" class="hide"></span
+            ></label>
+            <input
+              type="password"
+              id="password"
+              formControlName="password"
+              required
+            />
+          </div>
+        </div>
+        <span class="forgot">Forgot your password?</span>
+        <button class="form-button">
+          <span class="login-text">Login</span>
+          <div class="loading-dots hide">
+            <div class="loading-dots--dot"></div>
+            <div class="loading-dots--dot"></div>
+            <div class="loading-dots--dot"></div>
+          </div>
+        </button>
+      </form>
+      <span class="register-text"
+        >Need an account? <a href="">Register</a></span
+      >
+    </div>
+    <div class="captcha">
+      <img
+        src="data:image/png;base64,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"
+        alt="Fake QR Code"
+      />
+      <div class="caption">
+        <h1>Log in with QR Code</h1>
+        <span
+          >Scan this with <strong>Discord mobile app</strong> to log in
+          instantly.</span
+        >
+      </div>
+    </div>
+  </div>
+</div>
