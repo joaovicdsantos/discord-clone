@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --proxy-config proxy.conf.json --base-href /",
+    "start": "ng serve --proxy-config proxy.conf.json",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
@@ -31,6 +31,7 @@
     "@angular-devkit/build-angular": "~12.0.1",
     "@angular/cli": "~12.0.1",
     "@angular/compiler-cli": "~12.0.1",
+    "@types/events": "^3.0.0",
     "@types/jasmine": "~3.6.0",
     "@types/markdown-it": "^12.0.1",
     "@types/marked": "^2.0.3",

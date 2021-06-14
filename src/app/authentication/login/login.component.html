@@ -31,7 +31,7 @@
             />
           </div>
         </div>
-        <span class="forgot">Forgot your password?</span>
+        <span class="alternative">Forgot your password?</span>
         <button class="form-button">
           <span class="login-text">Login</span>
           <div class="loading-dots hide">
@@ -40,10 +40,10 @@
             <div class="loading-dots--dot"></div>
           </div>
         </button>
+        <span class="register-text"
+          >Need an account? <a [routerLink]="['/register']">Register</a></span
+        >
       </form>
-      <span class="register-text"
-        >Need an account? <a href="">Register</a></span
-      >
     </div>
     <div class="captcha">
       <img

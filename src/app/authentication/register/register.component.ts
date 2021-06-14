@@ -1,25 +1,26 @@
-import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { CookieService } from 'ngx-cookie-service';
-
-import { getCookie } from '../shared/helpers/cookie';
+import { HttpClient } from "@angular/common/http";
+import { Component } from "@angular/core";
+import { FormBuilder, Validators } from "@angular/forms";
+import { Router } from "@angular/router";
+import { CookieService } from "ngx-cookie-service";
 
 @Component({
-  templateUrl: './authentication.component.html',
-  styleUrls: ['./authentication.component.css'],
+  selector: 'register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css']
 })
-export class AuthenticationComponent {
-  loginForm = this.formBuilder.group({
+export class RegisterComponent {
+  registerForm = this.formBuilder.group({
     email: ['', [Validators.required, Validators.email]],
+    username: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(24)]],
     password: [
       '',
-      [Validators.required, Validators.minLength(4), Validators.maxLength(20)],
+      [Validators.required, Validators.minLength(4), Validators.maxLength(24)],
     ],
   });
-  emailControl = this.loginForm.controls.email;
-  passwordControl = this.loginForm.controls.password;
+  emailControl = this.registerForm.controls.email;
+  usernameControl = this.registerForm.controls.username;
+  passwordControl = this.registerForm.controls.password;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -31,13 +32,13 @@ export class AuthenticationComponent {
   }
 
   switchLoadEffect(): void {
-    const loginText = document.querySelector('.login-text');
+    const registerText = document.querySelector('.register-text');
     const loadingDots = document.querySelector('.loading-dots');
-    if (!loginText?.classList.contains('hide')) {
-      loginText?.classList.add('hide');
+    if (!registerText?.classList.contains('hide')) {
+      registerText?.classList.add('hide');
       loadingDots?.classList.remove('hide');
     } else {
-      loginText?.classList.remove('hide');
+      registerText?.classList.remove('hide');
       loadingDots?.classList.add('hide');
     }
   }
@@ -51,39 +52,40 @@ export class AuthenticationComponent {
   }
 
   onSubmit(): void {
-    if (this.loginForm.valid && this.loginForm.dirty) {
+    if (this.registerForm.valid && this.registerForm.dirty) {
       this.switchLoadEffect();
-      console.log(this.loginForm.value);
-      this.httpClient.post('/api/v1/login', this.loginForm.value).subscribe({
+      this.httpClient.post('/api/v1/register', this.registerForm.value).subscribe({
         next: () => {
-          this.router.navigate(['']);
+          this.router.navigate(['/login']);
           this.switchLoadEffect();
         },
         error: (err) => {
-          console.log(err);
           if (err.status == 401) {
             if (err.error.error.toLowerCase().indexOf('email') > -1) {
               this.invalidEffect('email', err.error.error);
             } else if (err.error.error.toLowerCase().indexOf('password') > -1) {
               this.invalidEffect('password', err.error.error);
+            } else if (err.error.error.toLowerCase().indexOf('username') > -1) {
+              this.invalidEffect('username', err.error.error);
             }
           }
           this.switchLoadEffect();
         },
       });
     } else {
-      this.validateLoginForm();
+      this.validateRegisterForm();
     }
   }
 
-  validateLoginForm(): void {
+  validateRegisterForm(): void {
     if (this.emailControl.invalid) {
       if (this.emailControl.errors?.required) {
         this.invalidEffect('email', 'email is required');
       } else {
         this.invalidEffect('email', 'this email is invalid');
       }
-    } else if (this.passwordControl.invalid) {
+    }
+    if (this.passwordControl.invalid) {
       if (this.passwordControl.errors?.required) {
         this.invalidEffect('password', 'password is required');
       } else if (
@@ -91,6 +93,16 @@ export class AuthenticationComponent {
         !this.passwordControl.errors?.maxLength
       ) {
         this.invalidEffect('password', 'must be between 4 and 24');
+      }
+    }
+    if (this.usernameControl.invalid) {
+      if (this.usernameControl.errors?.required) {
+        this.invalidEffect('username', 'username is required');
+      } else if (
+        !this.usernameControl.errors?.minLength ||
+        !this.usernameControl.errors?.maxLength
+      ) {
+        this.invalidEffect('username', 'must be between 4 and 24');
       }
     }
   }

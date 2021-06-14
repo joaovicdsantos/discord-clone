@@ -9,7 +9,7 @@
   background-size: cover;
 }
 
-.container .auth-container {
+.auth-container {
   display: flex;
   width: 58%;
   background-color: #36393f;
@@ -18,25 +18,25 @@
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-.form-container {
-  width: 58%;
+form .form-button {
+  display: block;
+  width: 100%;
+  border: none;
+  border-radius: 3px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  font-weight: 600;
+  font-size: 11pt;
+  background-color: #5865f2;
+  outline: none;
+  padding: 15px;
+  color: #dfdfdf;
+  margin-bottom: 7px;
+  cursor: pointer;
+  transition: background-color 100ms;
 }
 
-.form-container .form-title-container {
-  margin-bottom: 18px;
-}
-
-.form-container .form-title-container h1 {
-  font-size: 17pt;
-  margin-bottom: 8px;
-  letter-spacing: 1px;
-  color: #fff;
-}
-
-.form-container .form-title-container h2 {
-  font-size: 12pt;
-  font-weight: normal;
-  color: #aaa;
+form .form-button:hover {
+  background-color: #4752c4;
 }
 
 .form-group {
@@ -86,7 +86,7 @@
   border: 1px solid #e74c3c !important;
 }
 
-form .forgot {
+form .alternative {
   display: block;
   color: #3498db;
   font-size: 10pt;
@@ -94,25 +94,25 @@ form .forgot {
   margin-bottom: 15px;
 }
 
-form .form-button {
-  display: block;
-  width: 100%;
-  border: none;
-  border-radius: 3px;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-  font-weight: 600;
-  font-size: 11pt;
-  background-color: #5865f2;
-  outline: none;
-  padding: 15px;
-  color: #dfdfdf;
-  margin-bottom: 7px;
-  cursor: pointer;
-  transition: background-color 100ms;
+.form-container {
+  width: 58%;
 }
 
-form .form-button:hover {
-  background-color: #4752c4;
+.form-container .form-title-container {
+  margin-bottom: 18px;
+}
+
+.form-container .form-title-container h1 {
+  font-size: 17pt;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+.form-container .form-title-container h2 {
+  font-size: 12pt;
+  font-weight: normal;
+  color: #aaa;
 }
 
 .register-text {
@@ -142,6 +142,7 @@ form .form-button:hover {
   border: 8px solid #ffffff;
   border-radius: 4px;
   margin-bottom: 20px;
+  width: 55%;
 }
 
 .captcha .caption {

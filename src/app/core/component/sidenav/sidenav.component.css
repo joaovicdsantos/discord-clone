@@ -3,6 +3,7 @@
   width: 100%;
   background-color: #202225;
   padding: 10px 0;
+  position: relative;
 }
 
 .divider {
@@ -11,4 +12,42 @@
   margin: 0 auto;
   background-color: rgba(255, 255, 255, 0.06);
   margin-bottom: 10px;
+}
+
+.no-server {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.no-server p {
+  width: min-content;
+  color: #ccc;
+  font-weight: bold;
+}
+
+.logout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  padding: 10px;
+}
+
+.logout a {
+  font-size: 15pt;
+  color: #ccc;
+  transition: color 150ms;
+}
+
+.logout a:hover {
+  color: #d63031;
+}
+
+* {
+  user-select: none;
 }

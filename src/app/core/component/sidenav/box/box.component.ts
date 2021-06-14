@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'server-box',
@@ -6,15 +6,21 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./box.component.css'],
 })
 export class BoxComponent implements OnInit {
-  @Input()
-  serverImageUrl: string = '';
+
+  @Output()
+  serverId = new EventEmitter();
 
   @Input()
-  serverName: string = '';
+  server: any;
 
   ngOnInit(): void {
     this.tooltip();
     setTimeout(this.tooltips, 500); // Time to load
+  }
+
+  selectThisServer(e: any, serverId: string): void {
+    this.clickEffect(e);
+    this.serverId.emit(serverId);
   }
 
   clickEffect(e: any): void {

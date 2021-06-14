@@ -1,5 +1,13 @@
 <div class="main-container">
-  <sidenav class="sidenav"></sidenav>
-  <channels class="channels"></channels>
-  <main-content class="main-content"></main-content>
+  <sidenav class="sidenav" (serverId)="loadServer($event)"></sidenav>
+  <div class="container-content--welcome">
+    <h1>Discord Clone</h1>
+    <h2>Choose a channel in the left sidebar.</h2>
+    <i class="fas fa-hand-point-left left-hand"></i>
+    <h3>dev: <a href="https://github.com/joaovicdsantos" target="_blank">joaovicdsantos</a></h3>
+  </div>
+  <div class="container-content--load">
+    <channels class="channels" [channels]="channels"></channels>
+    <main-content class="main-content"></main-content>
+  </div>
 </div>

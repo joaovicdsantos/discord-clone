@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Channel } from './channel/channel';
 import { GroupChannel } from './group-channel/channel-group';
 
@@ -8,13 +8,16 @@ import { GroupChannel } from './group-channel/channel-group';
   styleUrls: ['./channels.component.css'],
 })
 export class ChannelsComponent {
-  channels: Channel[];
+
+  @Input()
+  channels: any;
   groups: any;
 
   constructor() {
-    this.channels = CHANNELS;
-    this.groups = GRUOPS;
+    // this.channels = CHANNELS;
+    // this.groups = GRUOPS;
   }
+
 }
 
 const CHANNELS: Channel[] = [

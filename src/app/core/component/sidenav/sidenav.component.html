@@ -1,13 +1,16 @@
 <div class="container">
   <server-box
-    serverImageUrl="assets/img/logo.png"
-    serverName="Home"
+    [server]="home"
   ></server-box>
   <div class="divider"></div>
+  <div class="no-server" *ngIf="this.servers?.length === 0">
+    <p>No server found</p>
+  </div>
   <server-box
     *ngFor="let server of servers"
-    [serverImageUrl]="server.imageUrl"
-    [serverName]="server.name"
+    [server]="server"
+    (serverId)="setServerId($event)"
   >
   </server-box>
+  <div class="logout"><a href="#" (click)="logout()"><i class="fas fa-sign-out-alt"></i></a></div>
 </div>

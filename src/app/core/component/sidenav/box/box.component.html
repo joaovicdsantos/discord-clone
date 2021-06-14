@@ -1,7 +1,7 @@
 <div class="container">
-  <a href="#" class="link" (click)="clickEffect($event)">
-    <img [src]="serverImageUrl" [alt]="serverName" [srcset]="serverImageUrl" />
+  <a href="#" class="link" (click)="selectThisServer($event, server.id)">
+    <img [src]="server.image_url" [alt]="server.name" [srcset]="server.image_url" />
   </a>
   <div class="indicator"></div>
-  <div class="tooltip">{{ serverName }}</div>
+  <div class="tooltip">{{ server.name }}</div>
 </div>
