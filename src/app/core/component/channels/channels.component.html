@@ -4,7 +4,7 @@
     <i class="fas fa-chevron-down icon"></i>
   </div>
   <div class="channels-container">
-    <channel *ngFor="let channel of channels" [channel]="channel"></channel>
-    <group-channel *ngFor="let group of groups" [group]="group"></group-channel>
+    <channel *ngFor="let channel of channels" [channel]="channel" (channelId)="setChannelId($event)"></channel>
+    <group-channel *ngFor="let group of groups" [group]="group" (channelId)="setChannelId($event)"></group-channel>
   </div>
 </div>

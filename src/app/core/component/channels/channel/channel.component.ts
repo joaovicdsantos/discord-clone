@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Channel } from './channel';
 
 @Component({
@@ -8,9 +8,13 @@ import { Channel } from './channel';
 })
 export class ChannelComponent {
   @Input()
-  channel: Channel = new Channel('', '');
+  channel: Channel = new Channel('', '', '');
+
+  @Output()
+  channelId = new EventEmitter();
 
   changeChannel(e: any, channel: Channel): void {
+    this.channelId.emit(channel.id);
     this.clearSelection();
     e.currentTarget.classList.add('active');
   }

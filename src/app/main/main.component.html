@@ -4,10 +4,20 @@
     <h1>Discord Clone</h1>
     <h2>Choose a channel in the left sidebar.</h2>
     <i class="fas fa-hand-point-left left-hand"></i>
-    <h3>dev: <a href="https://github.com/joaovicdsantos" target="_blank">joaovicdsantos</a></h3>
+    <h3>
+      dev:
+      <a href="https://github.com/joaovicdsantos" target="_blank"
+        >joaovicdsantos</a
+      >
+    </h3>
   </div>
   <div class="container-content--load">
-    <channels class="channels" [channels]="channels"></channels>
-    <main-content class="main-content"></main-content>
+    <channels
+      class="channels"
+      [channels]="channels"
+      [groups]="groups"
+      (channelId)="loadChannel($event)"
+    ></channels>
+    <main-content class="main-content" [messages]="messages"></main-content>
   </div>
 </div>

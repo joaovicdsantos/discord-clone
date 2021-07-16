@@ -1,4 +1,4 @@
-import { Component, ContentChildren, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'group-channel',
@@ -8,6 +8,13 @@ import { Component, ContentChildren, Input } from '@angular/core';
 export class ChannelGroupComponent {
   @Input()
   group: any = {};
+
+  @Output()
+  channelId = new EventEmitter();
+
+  setChannelId($event: any) {
+    this.channelId.emit($event)
+  }
 
   drag(e: any): void {
     const chevron = e.currentTarget.querySelector('.chevron');
